@@ -3,10 +3,11 @@
     <p class="error">{{ error }}</p>
 
     <p class="decode-result">
-      Last result: <b>{{ result }}</b>
+      Last result: <a>{{ result }}</a>
     </p>
 
     <qrcode-stream @decode="onDecode" @init="onInit" />
+    <a v-bind:href="link">リンクテスト</a>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ export default {
     return {
       result: "",
       error: "",
+      link: "",
     };
   },
   methods: {
