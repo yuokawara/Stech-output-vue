@@ -1,11 +1,7 @@
 <template>
   <div class="page">
     <!-- <p>{{ posts }}</p> -->
-    <ul>
-      <li v-for="post in posts" :key="post.id">
-        {{ post }}
-      </li>
-    </ul>
+    {{ info }}
   </div>
 </template>
 <script>
@@ -15,12 +11,15 @@ export default {
   data() {
     return {
       posts: [],
+      info: null,
     };
   },
   mounted() {
     axios
-      .get("https://api.twitter.com/1.1/lists/list.json")
-      .then((response) => (this.posts = response.data));
+      .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+      .then((response) => (this.info = response.data.bpi));
+    // .get("https://api.twitter.com/1.1/lists/list.json")
+    // .then((response) => (this.posts = response.data));
   },
 };
 </script>
