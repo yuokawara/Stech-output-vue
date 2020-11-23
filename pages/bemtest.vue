@@ -1,11 +1,27 @@
 <template>
   <div class="bem">
+    <div>
+      <h2>Rule</h2>
+      <h4>CSS記述にあたりルールを設定</h4>
+      <h3>Block</h3>
+      <p>主要となる部分。わかりやすい命名で。</p>
+      <br />
+      <h3>Element</h3>
+      <p>Block内を構成する要素。__を付け明示。</p>
+      <br />
+      <h3>Modifier</h3>
+      <p>
+        Block
+        Elementのバージョン違い。プロジェクトにより明示方法は異なるが、--で一旦記述
+      </p>
+    </div>
+    <hr />
     <div class="block">
       <h3>Block</h3>
       <div class="block__element">block__element</div>
     </div>
     <div class="block block_modifier">
-      <h3>block_modifier</h3>
+      <h3>Block_modifier</h3>
       <div class="block__element">block__element</div>
     </div>
     <hr />

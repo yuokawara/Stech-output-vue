@@ -2,7 +2,7 @@
   <div class="page">
     <ul>
       <li v-for="post in posts" :key="post.id">
-        {{ post.username }}
+        {{ post.name }}
       </li>
     </ul>
   </div>

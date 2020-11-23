@@ -19,6 +19,7 @@ export default {
       result: "",
       error: "",
       link: "",
+      qrcodeStream: false,
     };
   },
   methods: {
