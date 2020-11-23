@@ -2,12 +2,12 @@
   <div>
     <p class="error">{{ error }}</p>
 
-    <p class="decode-result">
-      Last result: <a>{{ result }}</a>
-    </p>
-
-    <qrcode-stream @decode="onDecode" @init="onInit" />
-    <a v-bind:href="link">リンクテスト</a>
+    <div class="qrcode-stream">
+      <qrcode-stream @decode="onDecode" @init="onInit" />
+      <p class="decode-result">
+        取得したリンク: <b>{{ result }}</b>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
   methods: {
     onDecode(result) {
       this.result = result;
+      location.href = result;
     },
 
     async onInit(promise) {
@@ -48,3 +49,9 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.qrcode-stream {
+  width: 320px;
+  height: 240px;
+}
+</style>

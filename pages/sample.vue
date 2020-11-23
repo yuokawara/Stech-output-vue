@@ -10,25 +10,69 @@
         <v-row class="practice__row--yellow">modifier yellow</v-row>
       </v-col>
       <v-col class="middlecontent">
-        <v-row
-          class="middlecontent__button"
-          justify="center
-"
-        >
-          <v-btn class="button">button</v-btn>
+        <v-row class="middlecontent__button" justify="center">
+          <v-btn class="button" to="/qrread">QRcodeReader</v-btn>
         </v-row>
         <v-row class="middlecontent__button" justify="center">
           <v-btn class="button__color--red">modifier button</v-btn>
         </v-row>
-        <v-row class="middlecontent__button" justify="center">
-          <v-btn class="button__color--yellow">modifier button</v-btn>
+        <v-row class="middlecontent__button">
+          <template>
+            <div class="text-center">
+              <v-dialog v-model="dialog" width="500">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn class="button__color--yellow" v-bind="attrs" v-on="on">
+                    Button
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-card-actions>
+                    <template><MyCalender /></template>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </div>
+          </template>
+        </v-row>
+      </v-col>
+
+      <v-col class="gallery">
+        <v-row>
+          <v-col>
+            <v-img
+              class="gallery__image"
+              src="https://1.bp.blogspot.com/-GJeIiEME8ik/XxU0ecbEKCI/AAAAAAABaLo/XrPA-5JvpfMI3ANbwWt_3R5fol-SOyH6gCNcBGAsYHQ/s400/food_kanazawa_curry.png"
+            />
+          </v-col>
+          <v-col>
+            <v-img
+              class="gallery__image"
+              src="https://1.bp.blogspot.com/-aE1d5IM9FuY/XwkxlUXaVYI/AAAAAAABaC4/5Y9ueDFkL-ktyOHXczaj5dvlCXieT-pigCNcBGAsYHQ/s1600/syougatsu_mark_mochi.png"
+            />
+          </v-col>
         </v-row>
       </v-col>
     </v-main>
   </v-container>
 </template>
+
 <script>
-export default {};
+import MyCalender from "~/components/MyCalender.vue";
+
+export default {
+  components: { MyCalender },
+  data() {
+    return {
+      dialog: false,
+      items: [
+        {
+          src:
+            "https://1.bp.blogspot.com/-GJeIiEME8ik/XxU0ecbEKCI/AAAAAAABaLo/XrPA-5JvpfMI3ANbwWt_3R5fol-SOyH6gCNcBGAsYHQ/s400/food_kanazawa_curry.png",
+        },
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .button {
@@ -62,6 +106,14 @@ export default {};
   &__button {
     margin: 0.5rem;
     padding: 0.5rem;
+  }
+}
+
+.gallery {
+  background-color: cadetblue;
+  &__image {
+    width: 100px;
+    height: 100px;
   }
 }
 </style>
