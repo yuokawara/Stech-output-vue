@@ -81,9 +81,12 @@ export default {
           to: "/inspire",
         },
         {
-          icon: "mdi-chart-bubble",
           title: "テスト",
-          to: "/test",
+          to: "/testApi",
+        },
+        {
+          title: "Store",
+          to: "/teststore",
         },
         {
           icon: "mdi-star",

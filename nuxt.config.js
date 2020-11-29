@@ -47,6 +47,7 @@ export default {
    */
   plugins: [{
     src: '~/plugins/vue-qrcode-reader',
+    src: '@/plugins/localStorage',
     ssr: false
   }],
   /*
@@ -73,7 +74,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: "http: //zipcloud.ibsnet.co.jp/api/",
+      target: "http://127.0.0.1:3000",
       pathRewrite: {
         '^/api': '/'
       }
