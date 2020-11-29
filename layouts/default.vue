@@ -85,6 +85,10 @@ export default {
           to: "/testApi",
         },
         {
+          title: "Sass",
+          to: "/testsass",
+        },
+        {
           title: "Store",
           to: "/teststore",
         },

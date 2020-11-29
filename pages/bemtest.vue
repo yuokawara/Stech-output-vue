@@ -38,7 +38,7 @@
 <script>
 export default {};
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .block {
   background-color: #efefef;
   border: 1px solid;
